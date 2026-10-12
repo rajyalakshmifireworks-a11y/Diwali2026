@@ -272,7 +272,7 @@ export default function Home() {
       "",
       "Please confirm availability, applicable rules, final pricing and fulfilment. This is an enquiry only; no payment has been made.",
     ].filter(Boolean).join("\n");
-    window.open(`https://wa.me/919493190055?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/919182286897?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -314,7 +314,7 @@ export default function Home() {
           </a>
           <div className="flex items-center gap-2">
             <a href="#details" className="hidden rounded-full bg-[#f4bd5c] px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#2a1413] shadow-[0_6px_18px_rgba(244,189,92,.12)] transition hover:bg-[#ffd77d] sm:inline-flex">Enquire</a>
-            <a href="tel:+919493190055" aria-label="Call Rajyalakshmi Fireworks" className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-[#f4bd5c] transition hover:border-[#f4bd5c]/60 hover:bg-white/10 sm:h-10 sm:w-auto sm:gap-2 sm:px-3"><Phone size={15} /><span className="hidden text-[10px] font-extrabold uppercase tracking-[0.14em] sm:inline">Call</span></a>
+            <a href="tel:+919182286897" aria-label="Call Rajyalakshmi Fireworks" className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-[#f4bd5c] transition hover:border-[#f4bd5c]/60 hover:bg-white/10 sm:h-10 sm:w-auto sm:gap-2 sm:px-3"><Phone size={15} /><span className="hidden text-[10px] font-extrabold uppercase tracking-[0.14em] sm:inline">Call</span></a>
           </div>
         </div>
       </header>
@@ -492,7 +492,7 @@ export default function Home() {
               <div className="mt-6 flex flex-wrap justify-center gap-3">
                 <button type="button" onClick={openWhatsAppOrder} className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-[#072c17] transition hover:bg-[#55e98a] active:scale-[.97] sm:w-auto"><Phone size={14} /> Send to WhatsApp</button>
                 <button type="button" onClick={copySummary} className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#f4bd5c] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-[#2a1413] transition hover:bg-[#ffd77d] active:scale-[.97] sm:w-auto"><Clipboard size={14} /> {copied ? "Copied" : "Copy enquiry"}</button>
-                <a href="tel:+919493190055" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 px-5 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-[#fff4d3] transition hover:border-[#f4bd5c]/50 hover:text-[#f4bd5c] sm:w-auto"><Phone size={14} /> Call +91 94931 90055</a>
+                <a href="tel:+919182286897" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 px-5 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-[#fff4d3] transition hover:border-[#f4bd5c]/50 hover:text-[#f4bd5c] sm:w-auto"><Phone size={14} /> Call +91 91822 86897</a>
               </div>
             </div>
           </section>
@@ -524,7 +524,7 @@ export default function Home() {
                 <button type="button" onClick={() => { setActiveCategory("All items"); setShowAll(false); setItemsMenuOpen(false); document.getElementById("catalogue")?.scrollIntoView({ behavior: "smooth" }); }} className="group flex w-full items-center justify-between rounded-lg border-l-4 border-[#ff6b6b] bg-[#273152] px-4 py-4 text-left text-base font-bold text-[#fff4d6] transition hover:bg-[#344069]"><span className="flex items-center gap-3"><Sparkles size={20} className="text-[#ff6b6b]" />Browse items</span><ArrowRight size={19} className="text-[#ff6b6b] transition-transform group-hover:translate-x-1" /></button>
                 <a href="#cart" onClick={() => setItemsMenuOpen(false)} className="group flex items-center justify-between rounded-lg border-l-4 border-[#2da8ff] px-4 py-4 text-base font-bold text-[#fff4d6] transition hover:bg-white/[.06]"><span className="flex items-center gap-3"><ShoppingBag size={20} className="text-[#2da8ff]" />Your cart{itemCount > 0 && <span className="rounded-full bg-[#ff6b6b] px-2 py-0.5 text-xs text-white">{itemCount}</span>}</span><ArrowRight size={19} className="text-[#2da8ff] transition-transform group-hover:translate-x-1" /></a>
                 <a href="#details" onClick={() => setItemsMenuOpen(false)} className="group flex items-center justify-between rounded-lg border-l-4 border-[#2da8ff] px-4 py-4 text-base font-bold text-[#fff4d6] transition hover:bg-white/[.06]"><span className="flex items-center gap-3"><Clipboard size={20} className="text-[#2da8ff]" />Your details</span><ArrowRight size={19} className="text-[#2da8ff] transition-transform group-hover:translate-x-1" /></a>
-                <a href="tel:+919493190055" onClick={() => setItemsMenuOpen(false)} className="group flex items-center justify-between rounded-lg border-l-4 border-[#2da8ff] px-4 py-4 text-base font-bold text-[#fff4d6] transition hover:bg-white/[.06]"><span className="flex items-center gap-3"><Phone size={20} className="text-[#2da8ff]" />Call us</span><ArrowRight size={19} className="text-[#2da8ff] transition-transform group-hover:translate-x-1" /></a>
+                <a href="tel:+919182286897" onClick={() => setItemsMenuOpen(false)} className="group flex items-center justify-between rounded-lg border-l-4 border-[#2da8ff] px-4 py-4 text-base font-bold text-[#fff4d6] transition hover:bg-white/[.06]"><span className="flex items-center gap-3"><Phone size={20} className="text-[#2da8ff]" />Call us</span><ArrowRight size={19} className="text-[#2da8ff] transition-transform group-hover:translate-x-1" /></a>
               </nav>
               <div className="mt-auto -mx-5 -mb-7 h-40 bg-[radial-gradient(ellipse_at_bottom_left,rgba(45,168,255,.45),transparent_58%),radial-gradient(ellipse_at_bottom_right,rgba(255,107,107,.35),transparent_52%)]" />
             </aside>
