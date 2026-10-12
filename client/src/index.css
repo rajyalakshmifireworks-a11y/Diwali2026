@@ -203,6 +203,8 @@
 [data-theme="midnight"] #catalogue aside [class*="text-[#85695a]"] { color: #fff4d6 !important; }
 
 @media (max-width: 640px) {
+  /* Hero text spans the full width on phones, so darken top-to-bottom instead of left-to-right. */
+  [data-theme="midnight"] #top > section:first-of-type > div:first-child { background: linear-gradient(180deg, rgba(7, 17, 31, .82) 0%, rgba(7, 17, 31, .7) 55%, rgba(7, 17, 31, .9) 100%) !important; }
   [data-theme="midnight"] header > div { padding-left: 1rem; padding-right: 1rem; }
   [data-theme="midnight"] header a[href^="tel"] { padding-left: .65rem; padding-right: .65rem; }
 }

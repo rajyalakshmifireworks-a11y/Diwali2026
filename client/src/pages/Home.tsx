@@ -380,16 +380,16 @@ export default function Home() {
                       <div className="mt-3 aspect-[4/3] w-full overflow-hidden rounded-lg bg-[#f2d9c5] sm:mt-3">
                         <img src={attachedProductImages[product.id] ?? attachedCategoryImages[product.category] ?? product.image} alt={`${product.name} fireworks product`} className="attached-product-image h-full w-full object-cover object-center transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
                       </div>
-                      <h3 className="mt-3 min-h-6 min-w-0 truncate font-display text-xl leading-none text-[#311a18] sm:mt-5 sm:text-2xl">{product.name}</h3>
+                      <h3 className="mt-3 min-h-6 min-w-0 line-clamp-2 font-display text-xl leading-tight text-[#311a18] sm:mt-5 sm:line-clamp-none sm:truncate sm:text-2xl sm:leading-none">{product.name}</h3>
                       <p className="mt-1 min-w-0 min-h-8 text-[11px] leading-4 text-[#745b50] sm:mt-2 sm:min-h-10 sm:text-xs sm:leading-5">{product.description || `${product.category} festive selection.`}</p>
                       <div className="mt-3 flex min-w-0 flex-col items-stretch gap-2 border-t border-[#3e241f]/10 pt-2 sm:mt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:pt-3">
-                        <span className="min-w-0 truncate text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#9a5442]"><span className="mr-1 text-[#9d7568] line-through">₹{product.salePrice.toLocaleString("en-IN")}</span> ₹{product.price.toLocaleString("en-IN")} / {product.unit}</span>
+                        <span className="min-w-0 text-[11px] font-extrabold uppercase leading-4 tracking-[0.08em] text-[#9a5442] sm:truncate sm:text-[10px] sm:tracking-[0.1em]"><span className="mr-1 text-[#9d7568] line-through">₹{product.salePrice.toLocaleString("en-IN")}</span> ₹{product.price.toLocaleString("en-IN")} / {product.unit}</span>
                         {quantity === 0 ? (
                           <button type="button" onClick={() => updateQuantity(product.id, 1)} className="inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-1 rounded-full bg-[#2d1717] px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.1em] text-[#fff4d6] shadow-[0_6px_14px_rgba(45,23,23,.18)] transition hover:bg-[#b12434] active:scale-[.97] sm:min-h-10 sm:w-auto sm:px-4 sm:text-[11px] sm:tracking-[0.14em] sm:lg:min-w-28">
                             Add to cart <Plus size={14} />
                           </button>
                         ) : (
-                          <div className="flex items-center gap-2 rounded-full bg-[#2d1717] p-1 text-[#fff4d6]">
+                          <div className="flex items-center justify-between gap-2 rounded-full bg-[#2d1717] p-1 text-[#fff4d6] sm:justify-start">
                             <button type="button" aria-label={`Remove one ${product.name}`} onClick={() => updateQuantity(product.id, -1)} className="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/15 active:scale-[.92]"><Minus size={13} /></button>
                             <span className="min-w-5 text-center text-xs font-bold">{quantity}</span>
                             <button type="button" aria-label={`Add one ${product.name}`} onClick={() => updateQuantity(product.id, 1)} className="flex h-9 w-9 items-center justify-center rounded-full transition hover:bg-white/15 active:scale-[.92]"><Plus size={13} /></button>
@@ -423,7 +423,7 @@ export default function Home() {
                         <span className="min-w-0 truncate">{item.name}</span>
                         <span className="flex items-center gap-2 text-xs font-bold text-[#a64b35]">
                           × {item.quantity}
-                          <button type="button" aria-label={`Remove ${item.name}`} onClick={() => updateQuantity(item.id, -1)} className="flex h-8 w-8 items-center justify-center rounded-full text-[#b89b8a] transition hover:bg-[#b12434]/10 hover:text-[#b12434]"><X size={14} /></button>
+                          <button type="button" aria-label={`Remove ${item.name}`} onClick={() => updateQuantity(item.id, -1)} className="flex h-10 w-10 items-center justify-center rounded-full text-[#b89b8a] sm:h-8 sm:w-8 transition hover:bg-[#b12434]/10 hover:text-[#b12434]"><X size={14} /></button>
                         </span>
                       </li>
                     ))}
@@ -456,17 +456,17 @@ export default function Home() {
             <form onSubmit={handleSubmit} className="rounded-[1.5rem] border border-white/10 bg-white/[.045] p-4 shadow-[0_20px_70px_rgba(0,0,0,.18)] backdrop-blur-sm sm:p-7">
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="block text-xs font-bold text-[#eadcc8]">Your name <span className="text-[#f4bd5c]">*</span>
-                  <input required value={customer.name} onChange={(event) => setCustomer({ ...customer, name: event.target.value })} className="mt-2 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition placeholder:text-[#876f64] focus:border-[#f4bd5c]/70 focus:ring-2 focus:ring-[#f4bd5c]/15" placeholder="e.g. Ananya Rao" />
+                  <input required value={customer.name} onChange={(event) => setCustomer({ ...customer, name: event.target.value })} className="mt-2 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-base text-white outline-none sm:text-sm transition placeholder:text-[#876f64] focus:border-[#f4bd5c]/70 focus:ring-2 focus:ring-[#f4bd5c]/15" placeholder="e.g. Ananya Rao" />
                 </label>
                 <label className="block text-xs font-bold text-[#eadcc8]">Phone number <span className="text-[#f4bd5c]">*</span>
-                  <input required type="tel" value={customer.phone} onChange={(event) => setCustomer({ ...customer, phone: event.target.value })} className="mt-2 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition placeholder:text-[#876f64] focus:border-[#f4bd5c]/70 focus:ring-2 focus:ring-[#f4bd5c]/15" placeholder="10-digit number" />
+                  <input required type="tel" value={customer.phone} onChange={(event) => setCustomer({ ...customer, phone: event.target.value })} className="mt-2 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-base text-white outline-none sm:text-sm transition placeholder:text-[#876f64] focus:border-[#f4bd5c]/70 focus:ring-2 focus:ring-[#f4bd5c]/15" placeholder="10-digit number" />
                 </label>
                 <label className="block text-xs font-bold text-[#eadcc8]">Area / locality
-                  <input value={customer.area} onChange={(event) => setCustomer({ ...customer, area: event.target.value })} className="mt-2 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition placeholder:text-[#876f64] focus:border-[#f4bd5c]/70 focus:ring-2 focus:ring-[#f4bd5c]/15" placeholder="e.g. Madhapur" />
+                  <input value={customer.area} onChange={(event) => setCustomer({ ...customer, area: event.target.value })} className="mt-2 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-base text-white outline-none sm:text-sm transition placeholder:text-[#876f64] focus:border-[#f4bd5c]/70 focus:ring-2 focus:ring-[#f4bd5c]/15" placeholder="e.g. Madhapur" />
                 </label>
               </div>
               <label className="mt-5 block text-xs font-bold text-[#eadcc8]">Anything we should know?
-                <textarea value={customer.notes} onChange={(event) => setCustomer({ ...customer, notes: event.target.value })} rows={4} className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition placeholder:text-[#876f64] focus:border-[#f4bd5c]/70 focus:ring-2 focus:ring-[#f4bd5c]/15" placeholder="Timing, preferred mix, or a question for us" />
+                <textarea value={customer.notes} onChange={(event) => setCustomer({ ...customer, notes: event.target.value })} rows={4} className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-base text-white outline-none sm:text-sm transition placeholder:text-[#876f64] focus:border-[#f4bd5c]/70 focus:ring-2 focus:ring-[#f4bd5c]/15" placeholder="Timing, preferred mix, or a question for us" />
               </label>
               <label className="mt-5 flex cursor-pointer items-start gap-3 text-xs leading-5 text-[#c9b7a2]">
                 <input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} className="mt-0.5 h-4 w-4 shrink-0 accent-[#f4bd5c]" />
@@ -487,7 +487,7 @@ export default function Home() {
               <h2 className="mt-3 font-display text-5xl text-[#fff4d3]">Your festive list is ready.</h2>
               <p className="mx-auto mt-4 max-w-lg text-sm leading-6 text-[#d9c1ae]">Reference <strong className="text-[#f4bd5c]">{reference}</strong>. Copy the summary below and share it with our team through your preferred contact channel for manual confirmation.</p>
               <div className="mx-auto mt-7 max-w-xl rounded-2xl border border-white/10 bg-black/20 p-5 text-left">
-                <pre className="whitespace-pre-wrap font-sans text-xs leading-5 text-[#e9d9c7]">{summary}</pre>
+                <pre className="whitespace-pre-wrap break-words font-sans text-xs leading-5 text-[#e9d9c7]">{summary}</pre>
               </div>
               <div className="mt-6 flex flex-wrap justify-center gap-3">
                 <button type="button" onClick={openWhatsAppOrder} className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-3 text-xs font-extrabold uppercase tracking-[0.14em] text-[#072c17] transition hover:bg-[#55e98a] active:scale-[.97] sm:w-auto"><Phone size={14} /> Send to WhatsApp</button>
@@ -500,8 +500,8 @@ export default function Home() {
       </main>
 
       <footer className="relative z-10 border-t border-white/10 bg-[#0d0809]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-center text-xs text-[#8e7669] sm:flex-row sm:items-center sm:justify-between sm:px-5 sm:text-left lg:px-8">
-          <div><span className="font-display text-xl text-[#f2dfc2]">Rajyalakshmi Fireworks</span><span className="ml-3">Madhapur · Hyderabad</span></div>
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 pb-24 pt-8 text-center text-xs text-[#8e7669] sm:flex-row sm:items-center sm:justify-between sm:px-5 sm:pb-8 sm:text-left lg:px-8">
+          <div><span className="block font-display text-xl text-[#f2dfc2] sm:inline">Rajyalakshmi Fireworks</span><span className="mt-1 block sm:ml-3 sm:mt-0 sm:inline">Madhapur · Hyderabad</span></div>
           <p>Celebrate responsibly. Follow package instructions and local rules.</p>
         </div>
       </footer>
